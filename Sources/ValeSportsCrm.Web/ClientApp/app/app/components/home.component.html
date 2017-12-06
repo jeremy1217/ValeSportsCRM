@@ -1,0 +1,32 @@
+<td-layout>
+  <td-layout-nav>
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+      <button mat-icon-button class="td-menu-button" (click)="sidenav.toggle()" mdTooltip="Main menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-icon class="mat-icon-logo" svgIcon="assets:covalent"></mat-icon>
+      <span>App</span>
+      <span flex></span>
+      <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </div>
+    <mat-sidenav-container fullscreen>
+      <mat-sidenav #sidenav mode="side" opened="true" style="width:257px;border-right:1px solid #ccc">
+        <div flex class="mat-content bgc-grey-50">
+          <mat-nav-list>
+            <a [routerLink]="['/app/customers/1']" mat-list-item>
+              <mat-icon matListIcon>people</mat-icon>Customers</a>
+            <a [routerLink]="['/app/programs/1']" mat-list-item>
+              <mat-icon matListIcon>domain</mat-icon>Programs</a>
+          </mat-nav-list>
+        </div>
+      </mat-sidenav>
+      <div tdMediaToggle="gt-xs" [mediaClasses]="['push-md']">
+        <mat-card>
+          <router-outlet></router-outlet>
+        </mat-card>
+      </div>
+    </mat-sidenav-container>
+  </td-layout-nav>
+</td-layout>

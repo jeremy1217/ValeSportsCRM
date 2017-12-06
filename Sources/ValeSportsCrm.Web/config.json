@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "DataAccessMySqlProvider": "server=localhost;userid=giraffe;password=g1r@ff3;database=ValeSportsCrm;"
+  }
+}

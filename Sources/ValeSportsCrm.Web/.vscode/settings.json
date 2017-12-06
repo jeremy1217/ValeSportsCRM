@@ -1,0 +1,7 @@
+{
+    "tslint.alwaysShowRuleFailuresAsWarnings": true,
+    "workbench.colorCustomizations": {
+        "editorWarning.foreground": "#880",
+        "editorInfo.foreground": "#00f"
+    }
+}

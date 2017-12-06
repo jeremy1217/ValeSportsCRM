@@ -1,0 +1,21 @@
+.vs
+*.suo
+*.user
+*.lock.json
+
+*/[Bb]in
+*/[Oo]bj
+*/[Dd]ebug
+*/[Rr]elease
+
+*/Publish
+
+packages/*
+*.nupkg
+*.DotSettings
+
+# NPM
+node_modules
+npm-debug.log
+
+wwwroot
