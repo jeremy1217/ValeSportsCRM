@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
 
     public items: IUser[] = [
         {
-            id: "1",
+            id: 1,
             userName: "User1",
             firstName: "John",
             lastName: "Smith",
@@ -34,7 +34,7 @@ export class UsersComponent implements OnInit {
             password: null
         },
         {
-            id: "1",
+            id: 2,
             userName: "User1",
             firstName: "John",
             lastName: "Smith",
@@ -44,7 +44,7 @@ export class UsersComponent implements OnInit {
             password: null
         },
         {
-            id: "1",
+            id: 3,
             userName: "User1",
             firstName: "John",
             lastName: "Smith",
@@ -54,7 +54,7 @@ export class UsersComponent implements OnInit {
             password: null
         },
         {
-            id: "1",
+            id: 4,
             userName: "User1",
             firstName: "John",
             lastName: "Smith",
@@ -64,7 +64,7 @@ export class UsersComponent implements OnInit {
             password: null
         },
         {
-            id: "1",
+            id: 5,
             userName: "User1",
             firstName: "John",
             lastName: "Smith",

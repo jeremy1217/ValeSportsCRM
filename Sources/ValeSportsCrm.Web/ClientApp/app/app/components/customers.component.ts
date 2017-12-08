@@ -29,60 +29,6 @@ export class CustomersComponent implements OnInit {
         { name: "id", label: "Actions" }
     ];
 
-    /*public items: ICustomer[] = [
-        {
-            id: "1",
-            firstName: "John",
-            lastName: "Smith",
-            birthDate: "12/1/2017",
-            address: "NY",
-            phone: "1800123456",
-            email: "qwe@asd.com",
-            sports: []
-        },
-        {
-            id: "1",
-            firstName: "John",
-            lastName: "Smith",
-            birthDate: "12/1/2017",
-            address: "NY",
-            phone: "1800123456",
-            email: "qwe@asd.com",
-            sports: []
-        },
-        {
-            id: "1",
-            firstName: "John",
-            lastName: "Smith",
-            birthDate: "12/1/2017",
-            address: "NY",
-            phone: "1800123456",
-            email: "qwe@asd.com",
-            sports: []
-        },
-        {
-            id: "1",
-            firstName: "John",
-            lastName: "Smith",
-            birthDate: "12/1/2017",
-            address: "NY",
-            phone: "1800123456",
-            email: "qwe@asd.com",
-            sports: []
-        },
-        {
-            id: "1",
-            firstName: "John",
-            lastName: "Smith",
-            birthDate: "12/1/2017",
-            address: "NY",
-            phone: "1800123456",
-            email: "qwe@asd.com",
-            sports: []
-        },
-
-    ];*/
-
     ngOnInit() { }
 
     create() {

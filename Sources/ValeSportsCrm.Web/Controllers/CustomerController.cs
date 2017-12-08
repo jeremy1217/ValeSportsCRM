@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ValeSportsCrm.Web.Controllers
 {
-    [Route("[controller]")]
+    [Route("customer")]
     public class CustomerController : Controller
     {
         private readonly IDataAccessProvider _dataAccessProvider;
@@ -15,7 +15,7 @@ namespace ValeSportsCrm.Web.Controllers
             _dataAccessProvider = dataAccessProvider;
         }
 
-        [HttpGet]
+        [HttpGet("list")]
         public IEnumerable<Customer> Get()
         {
             return _dataAccessProvider.GetCustomers();

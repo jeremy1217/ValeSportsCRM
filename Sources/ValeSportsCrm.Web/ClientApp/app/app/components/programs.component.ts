@@ -24,7 +24,7 @@ export class ProgramsComponent implements OnInit {
 
     public items: IProgram[] = [
         {
-            id: "1",
+            id: 1,
             name: "Program 1",
             type: ProgramType.Camps,
             startDate: "12/1/2017",
@@ -32,7 +32,7 @@ export class ProgramsComponent implements OnInit {
             price: 12345
         },
         {
-            id: "1",
+            id: 2,
             name: "Program 1",
             type: ProgramType.Camps,
             startDate: "12/1/2017",
@@ -40,7 +40,7 @@ export class ProgramsComponent implements OnInit {
             price: 12345
         },
         {
-            id: "1",
+            id: 3,
             name: "Program 1",
             type: ProgramType.Camps,
             startDate: "12/1/2017",

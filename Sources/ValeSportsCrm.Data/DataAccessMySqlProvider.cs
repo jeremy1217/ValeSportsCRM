@@ -44,7 +44,7 @@ namespace ValeSportsCrm.Data
 
         public List<Customer> GetCustomers()
         {
-            return _context.Customers.OrderByDescending(m => EF.Property<DateTime>(m, "UpdatedTimestamp")).ToList();
+            return _context.Customers.ToList();
         }
     }
 }

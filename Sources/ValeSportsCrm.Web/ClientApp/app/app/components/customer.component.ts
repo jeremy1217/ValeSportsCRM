@@ -28,13 +28,21 @@ export class CustomerComponent implements OnInit {
             address: ["", [Validators.maxLength(300)]],
             phone: ["", [Validators.maxLength(20)]],
             email: ["", [Validators.required, Validators.pattern(EMAIL_REGEX)]],
-            sports: [],
+            //sports: [],
         });
 
         this.item = _store.select(fromApp.selectCustomer);
         this.item.subscribe(m => {
             if (m) {
-                this.form.setValue(m);
+                this.form.setValue({
+                    id: m.id,
+                    firstName: m.firstName,
+                    lastName: m.lastName,
+                    birthDate: m.birthDate,
+                    address: m.address,
+                    phone: m.phone,
+                    email: m.email
+                });
             } else {
                 this.form.reset();
             }

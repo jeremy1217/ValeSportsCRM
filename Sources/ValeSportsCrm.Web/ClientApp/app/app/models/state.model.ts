@@ -1,5 +1,5 @@
 export interface IHaveId {
-    id: string;
+    id: number;
 }
 
 export interface IMessage {
@@ -14,7 +14,7 @@ export interface ICustomer extends IHaveId {
     address: string;
     phone: string;
     email: string;
-    sports: string[];
+    //sports: string[];
     //familyMembers: ICustomer[];
 }
 

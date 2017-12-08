@@ -20,6 +20,6 @@ export class ApiService<T extends IHaveId> {
     }
 
     getItems(skip: number, take: number): Observable<T[]> {
-        return this.http.get<T[]>(`${this._baseUrl}/list?skip=${skip}&take=${take}`);
+        return this.http.get<T[]>(`${this._baseUrl}/list`);//?skip=${skip}&take=${take}`);
     }
 }

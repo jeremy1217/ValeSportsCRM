@@ -23,7 +23,8 @@ namespace ValeSportsCrm.Data.Migrations
             modelBuilder.Entity("ValeSportsCrm.Core.Model.Customer", b =>
                 {
                     b.Property<long>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Address");
 

@@ -33,10 +33,10 @@ export class AppEffects {
                 birthDate: null,
                 email: null,
                 firstName: null,
-                id: null,
+                id: 0,
                 lastName: null,
                 phone: null,
-                sports: []
+                //sports: []
             }));
         }
         return this._customerApiService.getItem(id)
@@ -68,7 +68,7 @@ export class AppEffects {
 
     @Effect()
     customerSave$ = this._actions$
-        .ofType(App.CUSTOMER_SAVE_OK)
+        .ofType(App.CUSTOMER_SAVE)
         .switchMap((action: App.CustomerSave) => {
             return this._customerApiService.saveItem(action.payload)
                 .map((m) => new App.CustomerSaveOk(m))

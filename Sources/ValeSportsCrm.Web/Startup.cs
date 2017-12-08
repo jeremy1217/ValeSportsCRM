@@ -46,6 +46,10 @@ namespace ValeSportsCrm.Web
 
             //JsonOutputFormatter jsonOutputFormatter = new JsonOutputFormatter(serializerSettings, new System.Buffers.ArrayPool<object>());
 
+            services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()));
+
             services.AddMvc().AddJsonOptions(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
@@ -66,7 +70,7 @@ namespace ValeSportsCrm.Web
             loggerFactory.AddDebug();
 
             app.UseStaticFiles();
-
+            app.UseCors("AllowAll");
             app.UseMvc();
         }
     }
