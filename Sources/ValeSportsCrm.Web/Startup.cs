@@ -29,10 +29,10 @@ namespace ValeSportsCrm.Web
             //Use a MySQL database
             var sqlConnectionString = Configuration.GetConnectionString("DataAccessMySqlProvider");
 
-            services.AddDbContext<DomainModelMySqlContext>(options =>
+            services.AddDbContext<DomainModelContext>(options =>
                 options.UseMySql(
                     sqlConnectionString,
-                    b => b.MigrationsAssembly("AspNetCoreMultipleProject")
+                    b => b.MigrationsAssembly("ValeSportsCrm.Data")
                 )
             );
 

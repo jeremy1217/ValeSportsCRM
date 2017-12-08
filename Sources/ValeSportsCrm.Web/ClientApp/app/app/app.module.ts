@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import {
   MatAutocompleteModule,
@@ -55,9 +56,15 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from "./components/home.component";
 import { CustomersComponent } from "./components/customers.component";
 import { ProgramsComponent } from "./components/programs.component";
+import { CustomerComponent } from "./components/customer.component";
+import { ProgramComponent } from "./components/program.component";
+import { UsersComponent } from "./components/users.component";
+import { UserComponent } from "./components/user.component";
+import { CustomerApiService } from "./services/customer-api.service";
 
 @NgModule({
   imports: [
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
@@ -69,7 +76,7 @@ import { ProgramsComponent } from "./components/programs.component";
     EffectsModule.forFeature([
       AppEffects
     ]),
-
+    MatNativeDateModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
@@ -100,9 +107,13 @@ import { ProgramsComponent } from "./components/programs.component";
   declarations: [
     HomeComponent,
     CustomersComponent,
-    ProgramsComponent
+    ProgramsComponent,
+    CustomerComponent,
+    ProgramComponent,
+    UserComponent,
+    UsersComponent
   ],
-  providers: [],
+  providers: [CustomerApiService],
   bootstrap: []
 })
 export class AppModule { }

@@ -1,10 +1,13 @@
+export interface IHaveId {
+    id: string;
+}
+
 export interface IMessage {
     header: string;
     message: string;
 }
 
-export interface ICustomer {
-    id: string;
+export interface ICustomer extends IHaveId {
     firstName: string;
     lastName: string;
     birthDate: string;
@@ -12,18 +15,26 @@ export interface ICustomer {
     phone: string;
     email: string;
     sports: string[];
-    photoUrl: string;
-    familyMembers: ICustomer[];
+    //familyMembers: ICustomer[];
 }
 
-export interface IProgram {
-    id: string;
+export interface IUser extends IHaveId {
+    userName: string;
+    firstName: string;
+    lastName: string;
+    password: string;
+    phone: string;
+    email: string;
+    role: string;
+}
+
+export interface IProgram extends IHaveId {
     name: string;
     type: ProgramType;
     startDate: string;
     endDate: string;
     price: number;
-    customers: ICustomer[];
+    //customers: ICustomer[];
 }
 
 export enum ProgramType {

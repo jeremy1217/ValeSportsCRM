@@ -20,7 +20,12 @@ export const selectAppState = createSelector(
     (state: IAppState) => state.app
 );
 
-export const selectContacts = createSelector(
+export const selectCustomers = createSelector(
     selectAppState,
-    fromApp.getContacts
+    fromApp.getCustomers
+);
+
+export const selectCustomer = createSelector(
+    selectAppState,
+    fromApp.getCustomer
 );

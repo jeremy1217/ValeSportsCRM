@@ -4,17 +4,15 @@ using Microsoft.EntityFrameworkCore;
 namespace ValeSportsCrm.Data
 { 
     // >dotnet ef migration add testMigration
-    public class DomainModelMySqlContext : DbContext
+    public class DomainModelContext : DbContext
     {
-        public DomainModelMySqlContext(DbContextOptions<DomainModelMySqlContext> options) :base(options)
+        public DomainModelContext(DbContextOptions<DomainModelContext> options) :base(options)
         { }
         
         public DbSet<Customer> Customers { get; set; }
         
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Customer>().HasKey(m => m.Id);
-            
             base.OnModelCreating(builder);
         }
     }

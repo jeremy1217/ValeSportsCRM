@@ -10,10 +10,10 @@ namespace ValeSportsCrm.Data
 {
     public class DataAccessMySqlProvider : IDataAccessProvider
     {
-        private readonly DomainModelMySqlContext _context;
+        private readonly DomainModelContext _context;
         private readonly ILogger _logger;
 
-        public DataAccessMySqlProvider(DomainModelMySqlContext context, ILoggerFactory loggerFactory)
+        public DataAccessMySqlProvider(DomainModelContext context, ILoggerFactory loggerFactory)
         {
             _context = context;
             _logger = loggerFactory.CreateLogger("DataAccessMySqlProvider");

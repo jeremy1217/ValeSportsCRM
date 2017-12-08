@@ -2,23 +2,27 @@ import * as App from "../actions/app";
 import { ICustomer } from "../models/state.model";
 
 export interface IState {
-    contacts: ICustomer[];
+    customers: ICustomer[];
+    customer: ICustomer;
 }
 
 const initialState: IState = {
-    contacts: []
+    customers: [],
+    customer: null
 };
 
 export function reducer(state: IState = initialState, action: App.Actions): IState {
     switch (action.type) {
         case App.CUSTOMERS_OPEN_OK: {
             return {
-                ...state
+                ...state,
+                customers: action.payload
             };
         }
-        case App.CUSTOMER_OPEN: {
+        case App.CUSTOMER_OPEN_OK: {
             return {
-                ...state
+                ...state,
+                customer: action.payload
             };
         }
         default: {
@@ -27,4 +31,5 @@ export function reducer(state: IState = initialState, action: App.Actions): ISta
     }
 }
 
-export const getContacts = (state: IState) => state.contacts;
+export const getCustomers = (state: IState) => state.customers;
+export const getCustomer = (state: IState) => state.customer;

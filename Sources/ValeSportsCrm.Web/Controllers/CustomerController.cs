@@ -5,12 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ValeSportsCrm.Web.Controllers
 {
-    [Route("api/[controller]")]
-    public class CustomersController : Controller
+    [Route("[controller]")]
+    public class CustomerController : Controller
     {
         private readonly IDataAccessProvider _dataAccessProvider;
 
-        public CustomersController(IDataAccessProvider dataAccessProvider)
+        public CustomerController(IDataAccessProvider dataAccessProvider)
         {
             _dataAccessProvider = dataAccessProvider;
         }

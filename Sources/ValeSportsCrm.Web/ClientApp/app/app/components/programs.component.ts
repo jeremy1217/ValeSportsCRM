@@ -29,8 +29,7 @@ export class ProgramsComponent implements OnInit {
             type: ProgramType.Camps,
             startDate: "12/1/2017",
             endDate: "12/12/2017",
-            price: 12345,
-            customers: []
+            price: 12345
         },
         {
             id: "1",
@@ -38,8 +37,7 @@ export class ProgramsComponent implements OnInit {
             type: ProgramType.Camps,
             startDate: "12/1/2017",
             endDate: "12/12/2017",
-            price: 12345,
-            customers: []
+            price: 12345
         },
         {
             id: "1",
@@ -47,10 +45,8 @@ export class ProgramsComponent implements OnInit {
             type: ProgramType.Camps,
             startDate: "12/1/2017",
             endDate: "12/12/2017",
-            price: 12345,
-            customers: []
-        },
-
+            price: 12345
+        }
     ];
 
     ngOnInit() { }

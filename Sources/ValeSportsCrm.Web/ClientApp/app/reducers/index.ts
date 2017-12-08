@@ -11,4 +11,4 @@ export interface IState {
 
 export const reducers: ActionReducerMap<IState> = {
     routerReducer: fromRouter.routerReducer,
-};
+}

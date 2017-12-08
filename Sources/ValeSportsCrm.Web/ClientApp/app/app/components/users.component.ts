@@ -1,97 +1,83 @@
 import { Component, OnInit } from "@angular/core";
 import { ITdDataTableColumn } from "@covalent/core";
-import { ICustomer } from "../models/state.model";
+import { IUser } from "../models/state.model";
 import { IPageChangeEvent } from "@covalent/core";
-import { Store } from "@ngrx/store";
-import * as fromApp from "../reducers";
-import * as App from "../actions/app";
 
 const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
 
 @Component({
-    selector: "customers",
-    templateUrl: "./customers.component.html"
+    selector: "users",
+    templateUrl: "./users.component.html"
 })
-export class CustomersComponent implements OnInit {
-    public items: Store<ICustomer[]>;
-
-    constructor(private _store: Store<fromApp.IState>) {
-        this.items = _store.select(fromApp.selectCustomers);
-    }
+export class UsersComponent implements OnInit {
+    constructor() { }
 
     public columns: ITdDataTableColumn[] = [
+        { name: "userName", label: "User name" },
         { name: "firstName", label: "First name" },
         { name: "lastName", label: "Last name" },
-        { name: "birthDate", label: "Date of Birth" },
-        { name: "address", label: "Address" },
-        { name: "phone", label: "Phone" },
         { name: "email", label: "Email" },
+        { name: "phone", label: "Phone" },
+        { name: "role", label: "Role" },
         { name: "id", label: "Actions" }
     ];
 
-    /*public items: ICustomer[] = [
+    public items: IUser[] = [
         {
             id: "1",
+            userName: "User1",
             firstName: "John",
             lastName: "Smith",
-            birthDate: "12/1/2017",
-            address: "NY",
             phone: "1800123456",
             email: "qwe@asd.com",
-            sports: []
+            role: "User",
+            password: null
         },
         {
             id: "1",
+            userName: "User1",
             firstName: "John",
             lastName: "Smith",
-            birthDate: "12/1/2017",
-            address: "NY",
             phone: "1800123456",
             email: "qwe@asd.com",
-            sports: []
+            role: "User",
+            password: null
         },
         {
             id: "1",
+            userName: "User1",
             firstName: "John",
             lastName: "Smith",
-            birthDate: "12/1/2017",
-            address: "NY",
             phone: "1800123456",
             email: "qwe@asd.com",
-            sports: []
+            role: "User",
+            password: null
         },
         {
             id: "1",
+            userName: "User1",
             firstName: "John",
             lastName: "Smith",
-            birthDate: "12/1/2017",
-            address: "NY",
             phone: "1800123456",
             email: "qwe@asd.com",
-            sports: []
+            role: "User",
+            password: null
         },
         {
             id: "1",
+            userName: "User1",
             firstName: "John",
             lastName: "Smith",
-            birthDate: "12/1/2017",
-            address: "NY",
             phone: "1800123456",
             email: "qwe@asd.com",
-            sports: []
-        },
-
-    ];*/
+            role: "User",
+            password: null
+        }
+    ];
 
     ngOnInit() { }
 
-    create() {
-        this._store.dispatch(new App.CustomerCreate());
-    }
-
-    edit(id: string) {
-        this._store.dispatch(new App.CustomerOpen({ id: id }));
-    }
+    create() { }
 
     page(pagingEvent: IPageChangeEvent): void {
 
