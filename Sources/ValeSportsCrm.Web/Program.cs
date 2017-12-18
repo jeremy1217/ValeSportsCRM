@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore;
+﻿using System.IO;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace ValeSportsCrm.Web
 {
@@ -7,12 +9,27 @@ namespace ValeSportsCrm.Web
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            WebHost.CreateDefaultBuilder()
+                .UseStartup<Startup>()
+                .Build()
+                .Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        // https://wildermuth.com/2017/07/06/Program-cs-in-ASP-NET-Core-2-0
+        // Only used by EF Tooling
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            return WebHost.CreateDefaultBuilder()
+                .ConfigureAppConfiguration((ctx, cfg) =>
+                {
+                    cfg.SetBasePath(Directory.GetCurrentDirectory())
+                        .AddJsonFile("config.json", true) // require the json file!
+                        .AddEnvironmentVariables();
+                })
+                .ConfigureLogging((ctx, logging) => { }) // No logging
                 .UseStartup<Startup>()
+                .UseSetting("DesignTime", "true")
                 .Build();
+        }
     }
 }

@@ -10,7 +10,7 @@ import {
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { reducers } from "./reducers";
 import { AppRoutingModule } from "./app-routing.module";
-import { RouterStateUrl, CustomRouterStateSerializer } from "./utils";
+import { IRouterStateUrl, CustomRouterStateSerializer } from "./utils";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 

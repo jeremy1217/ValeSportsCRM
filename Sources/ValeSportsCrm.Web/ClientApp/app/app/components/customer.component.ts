@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ICustomer } from "../models/state.model";
+import { ICustomer, ISport } from "../models/state.model";
 import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Store } from "@ngrx/store";
 import * as fromApp from "../reducers";
@@ -14,8 +14,8 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 })
 export class CustomerComponent implements OnInit {
     public form: FormGroup;
-    public sportList = ["Soccer", "Baseball", "Basketball", "Softball", "Football", "Lacrosse"];
-    public item: Store<ICustomer>;
+    public item$: Store<ICustomer>;
+    public sports$: Store<ISport[]>;
 
     constructor(private _formBuilder: FormBuilder,
         private _store: Store<fromApp.IState>) {
@@ -28,11 +28,13 @@ export class CustomerComponent implements OnInit {
             address: ["", [Validators.maxLength(300)]],
             phone: ["", [Validators.maxLength(20)]],
             email: ["", [Validators.required, Validators.pattern(EMAIL_REGEX)]],
-            //sports: [],
+            sports: ""
         });
 
-        this.item = _store.select(fromApp.selectCustomer);
-        this.item.subscribe(m => {
+        this.sports$ = _store.select(fromApp.selectSports);
+
+        this.item$ = _store.select(fromApp.selectCustomer);
+        this.item$.subscribe(m => {
             if (m) {
                 this.form.setValue({
                     id: m.id,
@@ -41,7 +43,8 @@ export class CustomerComponent implements OnInit {
                     birthDate: m.birthDate,
                     address: m.address,
                     phone: m.phone,
-                    email: m.email
+                    email: m.email,
+                    sports: m.sports
                 });
             } else {
                 this.form.reset();

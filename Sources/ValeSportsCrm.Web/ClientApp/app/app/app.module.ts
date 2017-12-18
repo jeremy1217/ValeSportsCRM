@@ -61,6 +61,10 @@ import { ProgramComponent } from "./components/program.component";
 import { UsersComponent } from "./components/users.component";
 import { UserComponent } from "./components/user.component";
 import { CustomerApiService } from "./services/customer-api.service";
+import { ProgramApiService } from "./services/program-api.service";
+import { SportApiService } from "./services/sport-api.service";
+import { ProgramTypeApiService } from "./services/program-type-api.service";
+import { CovalentFileModule } from "@covalent/core";
 
 @NgModule({
   imports: [
@@ -102,7 +106,8 @@ import { CustomerApiService } from "./services/customer-api.service";
     CovalentLayoutModule, CovalentDataTableModule, CovalentPagingModule,
     CovalentStepsModule, CovalentDialogsModule, CovalentCommonModule, CovalentExpansionPanelModule,
     CovalentLoadingModule, CovalentSearchModule, CovalentNotificationsModule,
-    CovalentMenuModule, CovalentMessageModule, CovalentMediaModule
+    CovalentMenuModule, CovalentMessageModule, CovalentMediaModule,
+    CovalentFileModule
   ],
   declarations: [
     HomeComponent,
@@ -113,7 +118,12 @@ import { CustomerApiService } from "./services/customer-api.service";
     UserComponent,
     UsersComponent
   ],
-  providers: [CustomerApiService],
+  providers: [
+    CustomerApiService,
+    ProgramApiService,
+    ProgramTypeApiService,
+    SportApiService
+  ],
   bootstrap: []
 })
 export class AppModule { }

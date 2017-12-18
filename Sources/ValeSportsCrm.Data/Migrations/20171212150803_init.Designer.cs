@@ -11,9 +11,10 @@ using ValeSportsCrm.Data;
 namespace ValeSportsCrm.Data.Migrations
 {
     [DbContext(typeof(DomainModelContext))]
-    partial class DomainModelContextModelSnapshot : ModelSnapshot
+    [Migration("20171212150803_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

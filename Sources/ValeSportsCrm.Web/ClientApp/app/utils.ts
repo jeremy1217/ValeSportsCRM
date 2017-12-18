@@ -10,14 +10,14 @@ import { RouterStateSnapshot, Params } from "@angular/router";
  * returned such as route parameters and static route data.
  */
 
-export interface RouterStateUrl {
+export interface IRouterStateUrl {
     url: string;
     queryParams: Params;
 }
 
 export class CustomRouterStateSerializer
-    implements RouterStateSerializer<RouterStateUrl> {
-    serialize(routerState: RouterStateSnapshot): RouterStateUrl {
+    implements RouterStateSerializer<IRouterStateUrl> {
+    serialize(routerState: RouterStateSnapshot): IRouterStateUrl {
         const { url } = routerState;
         const queryParams = routerState.root.queryParams;
 

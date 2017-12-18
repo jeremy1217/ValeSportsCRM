@@ -14,8 +14,16 @@ export interface ICustomer extends IHaveId {
     address: string;
     phone: string;
     email: string;
-    //sports: string[];
+    sports: string[];
     //familyMembers: ICustomer[];
+}
+
+export interface ISport extends IHaveId {
+    name: string;
+}
+
+export interface IProgramType extends IHaveId {
+    name: string;
 }
 
 export interface IUser extends IHaveId {

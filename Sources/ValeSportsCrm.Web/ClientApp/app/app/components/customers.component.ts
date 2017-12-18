@@ -6,17 +6,15 @@ import { Store } from "@ngrx/store";
 import * as fromApp from "../reducers";
 import * as App from "../actions/app";
 
-const DECIMAL_FORMAT: (v: any) => any = (v: number) => v.toFixed(2);
-
 @Component({
     selector: "customers",
     templateUrl: "./customers.component.html"
 })
 export class CustomersComponent implements OnInit {
-    public items: Store<ICustomer[]>;
+    public items$: Store<ICustomer[]>;
 
     constructor(private _store: Store<fromApp.IState>) {
-        this.items = _store.select(fromApp.selectCustomers);
+        this.items$ = _store.select(fromApp.selectCustomers);
     }
 
     public columns: ITdDataTableColumn[] = [
@@ -41,5 +39,11 @@ export class CustomersComponent implements OnInit {
 
     page(pagingEvent: IPageChangeEvent): void {
 
+    }
+
+    public uploadEvent(file: File): void {
+        this._store.dispatch(new App.CustomersUpload({
+            file
+        }));
     }
 }

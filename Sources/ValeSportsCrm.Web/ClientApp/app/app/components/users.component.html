@@ -4,7 +4,7 @@
             <img [src]="value" />
         </ng-template>
         <ng-template tdDataTableTemplate="id" let-value="value">
-            <button mat-icon-button matTooltip="Edit customer">
+            <button mat-icon-button matTooltip="Edit user">
                 <mat-icon>edit</mat-icon>
             </button>
         </ng-template>
@@ -12,12 +12,12 @@
     <div class="mat-padding" *ngIf="items.length === 0" layout="row" layout-align="center center">
         <h3>No results to display.</h3>
     </div>
-    <td-paging-bar #pagingBar [pageSize]="10" [total]="10" (change)="page($event)">
+    <td-paging-bar #pagingBar [pageSize]="10" [total]="items.length" (change)="page($event)">
         <span td-paging-bar-label hide-xs>Row per page:</span>
         {{pagingBar.range}}
         <span hide-xs>of {{pagingBar.total}}</span>
     </td-paging-bar>
 </div>
-<button (click)="create()" mat-fab color="accent" matTooltip="Add new customer" matTooltipPosition="before" class="mat-fab-bottom-right z-3 fixed fab-pad">
+<button (click)="create()" mat-fab color="accent" matTooltip="Add new user" matTooltipPosition="before" class="mat-fab-bottom-right z-3 fixed fab-pad">
     <mat-icon>add</mat-icon>
 </button>

@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://gla.dev.altoros.com"
+  apiUrl: "http://localhost:2573"//http://gla.dev.altoros.com"
 };

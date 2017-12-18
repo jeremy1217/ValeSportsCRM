@@ -1,15 +1,25 @@
 <div layout="column">
-    <td-data-table [data]="items | async" [columns]="columns">
+    <td-file-upload name="fileUpload" #fileUpload (upload)="uploadEvent($event)" (cancel)="cancelEvent()" accept=".csv" required>
+        <mat-icon>file_upload</mat-icon>
+        <span>{{ fileUpload.files?.name }}</span>
+        <ng-template td-file-input-label>
+            <mat-icon>file_upload</mat-icon>
+            <span>
+                Import CSV file
+            </span>
+        </ng-template>
+    </td-file-upload>
+    <td-data-table [data]="items$ | async" [columns]="columns">
         <ng-template tdDataTableTemplate="id" let-value="value">
             <button mat-icon-button matTooltip="Edit customer" (click)="edit(value)">
                 <mat-icon>edit</mat-icon>
             </button>
         </ng-template>
     </td-data-table>
-    <div class="mat-padding" *ngIf="(items | async).length === 0" layout="row" layout-align="center center">
+    <div class="mat-padding" *ngIf="(items$ | async).length === 0" layout="row" layout-align="center center">
         <h3>No results to display.</h3>
     </div>
-    <td-paging-bar #pagingBar [pageSize]="10" [total]="10" (change)="page($event)">
+    <td-paging-bar #pagingBar [pageSize]="10" [total]="(items$ | async).length" (change)="page($event)">
         <span td-paging-bar-label hide-xs>Row per page:</span>
         {{pagingBar.range}}
         <span hide-xs>of {{pagingBar.total}}</span>

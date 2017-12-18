@@ -11,13 +11,13 @@ import { UserComponent } from "./components/user.component";
 import { Conditional } from "@angular/compiler";
 
 export const routes: Routes = [
-    { path: "", redirectTo: "customers/1", pathMatch: "full" },
+    { path: "", redirectTo: "customers", pathMatch: "full" },
     {
         path: "",
         component: HomeComponent,
         children: [
             {
-                path: "customers/:page",
+                path: "customers",
                 component: CustomersComponent
             },
             {
@@ -25,7 +25,7 @@ export const routes: Routes = [
                 component: CustomerComponent
             },
             {
-                path: "programs/:page",
+                path: "programs",
                 component: ProgramsComponent
             },
             {
@@ -33,7 +33,7 @@ export const routes: Routes = [
                 component: ProgramComponent
             },
             {
-                path: "users/:page",
+                path: "users",
                 component: UsersComponent
             },
             {

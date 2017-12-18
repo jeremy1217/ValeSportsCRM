@@ -19,7 +19,7 @@ export class ApiService<T extends IHaveId> {
         return this.http.post<T>(this._baseUrl, item);
     }
 
-    getItems(skip: number, take: number): Observable<T[]> {
-        return this.http.get<T[]>(`${this._baseUrl}/list`);//?skip=${skip}&take=${take}`);
+    getItems(): Observable<T[]> {
+        return this.http.get<T[]>(`${this._baseUrl}/list`);
     }
 }
